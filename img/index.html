@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Subhankar Swain — Researcher • Engineer • Developer</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      /* light background */
+      --card: #ffffff;
+      --muted: #555;
+      --accent: #f59e0b;
+      /* amber */
+      --glass: rgba(0, 0, 0, 0.04);
+      --glass-2: rgba(0, 0, 0, 0.02);
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+      color: #222;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.6;
+      padding-top: 140px;
+    }
+
+    header.site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 2px solid rgba(0, 0, 0, 0.06)
+    }
+
+    .brand .title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.2px;
+      color: #111
+    }
+
+    .brand .subtitle {
+      display: block;
+      font-size: .8rem;
+      color: var(--muted);
+      margin-top: 2px
+    }
+
+    nav.primary {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    nav.primary a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: .95rem;
+    }
+
+    nav.primary a:hover,
+    nav.primary a.active {
+      color: var(--accent);
+      background: var(--glass-2)
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-size: 1.2rem
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 36px 20px
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 36px;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.01));
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #111
+    }
+
+    .hero p.lead {
+      color: var(--muted);
+      margin-top: 10px;
+      font-size: 1rem
+    }
+
+    .profile-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      background: transparent
+    }
+
+    .profile-card img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1)
+    }
+
+    .social-row {
+      display: flex;
+      gap: 12px
+    }
+
+    .social-row a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--glass);
+      color: var(--muted);
+      text-decoration: none
+    }
+
+    .social-row a:hover {
+      color: #fff;
+      background: var(--accent)
+    }
+
+    section {
+      margin-bottom: 30px;
+      scroll-margin-top: 120px
+    }
+
+    section .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px
+    }
+
+    section h2 {
+      margin: 0;
+      color: #111;
+      font-size: 1.25rem
+    }
+
+    section p.desc {
+      color: var(--muted);
+      margin: 6px 0 14px
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px
+    }
+
+    .grid.cols-2 {
+      grid-template-columns: repeat(2, 1fr)
+    }
+
+    .card {
+      background: linear-gradient(180deg, #fff, #fdfdfd);
+      padding: 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04)
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      color: #111
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 0
+    }
+
+    .pub-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px
+    }
+
+    .pub-item .meta {
+      font-size: .85rem;
+      color: var(--muted)
+    }
+
+    .pub-item a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 12px
+    }
+
+    .timeline .item {
+      display: flex;
+      gap: 12px
+    }
+
+    .timeline .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 8px
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 28px 20px;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      background: #f9fafb
+    }
+
+    @media (max-width:980px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card img {
+        width: 160px;
+        height: 160px
+      }
+
+      nav.primary {
+        display: none
+      }
+
+      .menu-btn {
+        display: inline-flex
+      }
+    }
+
+    .drawer {
+      position: fixed;
+      top: 74px;
+      right: 20px;
+      background: #ffffff;
+      padding: 12px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.08)
+    }
+
+    .drawer a {
+      padding: 10px;
+      border-radius: 8px;
+      color: #444
+    }
+
+    .drawer.show {
+      display: flex
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      * {
+        transition: none !important
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="brand">
+      <img src="img/logo.jpg" alt="Subhankar">
+      <div>
+        <span class="title">Subhankar Swain</span>
+        <span class="subtitle">Researcher • Engineer • Developer</span>
+      </div>
+    </div>
+
+    <nav class="primary" aria-label="Primary">
+      <a href="#education">Education</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+    </nav>
+
+    <div style="display:flex;align-items:center;gap:12px">
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileDrawer"><i
+          class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <div class="drawer" id="mobileDrawer">
+    <a href="#education">Education</a>
+    <a href="#publications">Publications</a>
+    <a href="#experience">Experience</a>
+  </div>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Hi — I'm <span style="color:var(--accent)">Subhankar Swain</span></h1>
+        <p class="lead">
+          I have just begun my research journey as an MS by Research student at IIT Kharagpur. I am exploring multimodal
+          harmful content detection under the guidance of Prof. <a href="https://cse.iitkgp.ac.in/~animeshm/"
+            target="_blank">Animesh Mukherjee</a> and am excited to be part of the research groups <a
+            href="https://hate-alert.github.io/" target="_blank">HateAlert</a> and <a
+            href="https://cnerg-iitkgp.github.io/" target="_blank">CNeRG</a>.
+        </p>
+      </div>
+
+      <aside class="profile-card">
+        <img src="img/profile.jpg" alt="Profile photo">
+        <div style="text-align:center">
+          <div style="font-weight:700">Subhankar Swain</div>
+          <div style="color:var(--muted);font-size:.9rem">MS by Research, IIT Kharagpur</div>
+        </div>
+
+        <div class="social-row">
+          <a href="mailto:subhankr.official185@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/subhankar-swain-031080208/" target="_blank" title="LinkedIn"><i
+              class="fab fa-linkedin"></i></a>
+          <a href="https://scholar.google.com/citations?user=_fCVVXIAAAAJ&hl=en" target="_blank"
+            title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+          <a href="https://github.com/subhankariitkgp?tab=repositories" target="_blank" title="GitHub"><i
+              class="fab fa-github"></i></a>
+        </div>
+      </aside>
+    </section>
+
+    <section id="education" style="background-color: #f9f9f9; padding: 60px 20px;">
+  <div class="section-head" style="text-align: center; margin-bottom: 50px;">
+    <h2 style="font-size: 2.8em; color: #000;">Education</h2>
+  </div>
+
+  <div class="grid-education" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; justify-items: center;">
+
+    <a href="https://www.iitkgp.ac.in/" target="_blank" class="card">
+      <div style="background: linear-gradient(135deg, #e8f5e9, #ffffff); padding: 30px; border-radius: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; color: #000;">
+        <h3>Indian Institute of Technology, Kharagpur</h3>
+        <p class="meta"><strong>Degree:</strong> MS by Research in Computer Science and Engineering — 2024–2027</p>
+        <p class="meta"><strong>Thesis:</strong> Multimodal Harmful Content Detection</p>
+      </div>
+    </a>
+
+    <a href="http://www.gcekjr.ac.in/" target="_blank" class="card">
+      <div style="background: linear-gradient(135deg, #e8f5e9, #ffffff); padding: 30px; border-radius: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; color: #000;">
+        <h3>Government College of Engineering, Keonjhar</h3>
+        <p class="meta"><strong>Degree:</strong> B.Tech in Computer Science and Engineering — 2020–2024</p>
+        <p class="meta">Grade: 8.48 / 10</p>
+      </div>
+    </a>
+
+    <a href="https://share.google/RlaUAYD8TKTu0As9c" target="_blank" class="card">
+      <div style="background: linear-gradient(135deg, #e8f5e9, #ffffff); padding: 30px; border-radius: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; color: #000;">
+        <h3>Adyant Higher Secondary School, Bhubaneswar</h3>
+        <p class="meta"><strong>Degree:</strong> Higher Secondary (PCM) — 2018–2020</p>
+        <p class="meta">Grade: 87.33%</p>
+      </div>
+    </a>
+
+    <a href="https://ssvmnimapada.com/" target="_blank" class="card">
+      <div style="background: linear-gradient(135deg, #e8f5e9, #ffffff); padding: 30px; border-radius: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; color: #000;">
+        <h3>Saraswati Sishu Vidya Mandir, Nimapada</h3>
+        <p class="meta"><strong>Degree:</strong> High School — 2007–2018</p>
+        <p class="meta">Grade: 85%</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<style>
+  .grid-education a {
+    text-decoration: none;
+    width: 100%;
+  }
+
+  .grid-education .card div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  }
+
+  .meta {
+    color: #000;
+    margin-top: 8px;
+    line-height: 1.5;
+    font-size: 0.95em;
+  }
+</style>
+
+
+   <section id="publications" style="background-color: #f9f9f9; padding: 60px 20px;">
+  <div class="section-head" style="text-align: center; margin-bottom: 50px;">
+    <h2 style="font-size: 2.8em; color: #000;">Publications</h2>
+  </div>
+
+  <div class="grid-publications" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; justify-items: center;">
+    
+    <a href="https://arxiv.org/abs/2508.04166" target="_blank" class="pub-card">
+      <div style="background: linear-gradient(135deg, #e8f5e9, #ffffff); padding: 25px; border-radius: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; color: #000;">
+        <h3 style="margin-bottom: 10px;">ToxicTags: Decoding Toxic Memes with Rich Tag Annotations</h3>
+        <div class="meta" style="margin-bottom: 15px; font-weight: bold;">arXiv:2508.04166 · 2025</div>
+        <p class="meta" style="line-height: 1.6;">In this work, we introduce a first-of-its-kind dataset of 6,300 real-world meme-based posts annotated in two stages: (i) binary classification into toxic and normal, and (ii) fine-grained labeling of toxic memes as hateful, dangerous, or offensive. A key feature of this dataset is that it is enriched with auxiliary metadata of socially relevant tags, enhancing the context of each meme. In addition, we propose a tag generation module that produces socially grounded tags, because most in-the-wild memes often do not come with tags. Experimental results show that incorporating these tags substantially enhances the performance of state-of-the-art VLM detection tasks.</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<style>
+  .grid-publications a {
+    text-decoration: none;
+    width: 100%;
+  }
+
+  .pub-card:hover div {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  }
+
+  .meta {
+    color: #000;
+    font-size: 0.95em;
+  }
+</style>
+
+<section id="experience" style="background-color: #f9f9f9; padding: 60px 20px;">
+  <div class="section-head" style="text-align: center; margin-bottom: 50px;">
+    <h2 style="font-size: 2.8em; color: #000;">Experience</h2>
+  </div>
+
+  <div class="grid-experience" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; justify-items: center;">
+
+    <div class="item card">
+      <div style="background: linear-gradient(135deg, #e8f5e9, #ffffff); padding: 25px; border-radius: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; color: #000;">
+        <h3>Junior Research Fellow — CNeRG, IIT Kharagpur</h3>
+        <p class="meta">July 2024 – Present</p>
+        <p class="meta">Working on multimodal harmful content detection.</p>
+      </div>
+    </div>
+
+    <div class="item card">
+      <div style="background: linear-gradient(135deg, #e8f5e9, #ffffff); padding: 25px; border-radius: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; color: #000;">
+        <h3>Machine Learning Engineer — Y3X Innovatech, Bhubaneswar</h3>
+        <p class="meta">May 2024 – July 2024</p>
+        <p class="meta">Worked on ML model development and deployment.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .grid-experience .card div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  }
+
+  .meta {
+    color: #000;
+    font-size: 0.95em;
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+</style>
+
+
+    <footer>
+      <div
+        style="max-width:var(--max-width);margin:0 auto;padding:6px 12px;display:flex;flex-direction:column;gap:8px;align-items:center">
+        <div style="color:var(--muted)">&copy; 2025 Subhankar Swain</div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    const OFFSET = 110;
+    document.querySelectorAll('a[href^="#"]').forEach(el => {
+      el.addEventListener('click', e => {
+        const target = document.querySelector(el.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - OFFSET;
+        window.scrollTo({ top, behavior: 'smooth' });
+        document.getElementById('mobileDrawer')?.classList.remove('show');
+        document.getElementById('menuBtn')?.setAttribute('aria-expanded', 'false');
+        document.querySelectorAll('nav.primary a').forEach(a => a.classList.remove('active'));
+        el.classList.add('active');
+      });
+    });
+
+    const menuBtn = document.getElementById('menuBtn');
+    const drawer = document.getElementById('mobileDrawer');
+    menuBtn?.addEventListener('click', () => {
+      drawer.classList.toggle('show');
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+    });
+
+    const sections = document.querySelectorAll('main section[id]');
+    window.addEventListener('scroll', () => {
+      const fromTop = window.scrollY + OFFSET + 20;
+      sections.forEach(sec => {
+        if (sec.offsetTop <= fromTop && (sec.offsetTop + sec.offsetHeight) > fromTop) {
+          const id = sec.getAttribute('id');
+          document.querySelectorAll('nav.primary a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
